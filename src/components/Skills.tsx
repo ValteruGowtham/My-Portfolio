@@ -1,38 +1,103 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { 
+  Code2, Database, Globe, Server, GitBranch, Terminal, 
+  Cpu, Brain, Cloud, Smartphone, Monitor, FileCode,
+  Settings, Wrench, Zap, Shield, Package, Layers,
+  Users, Clock, MessageSquare, Target, Lightbulb, Star
+} from "lucide-react";
 
 const Skills = () => {
+  // Icon mapping for technologies and tools
+  const getSkillIcon = (skillName: string) => {
+    const iconMap: Record<string, any> = {
+      // Technologies & Frameworks
+      "PyTorch": Brain,
+      "Django": Globe,
+      "Flask": Server,
+      "LangChain": Layers,
+      "Scikit-learn": Brain,
+      "Linux": Terminal,
+      "Jenkins": Settings,
+      "React": Code2,
+      "Node.js": Server,
+      
+      // Tools & Platforms
+      "Git": GitBranch,
+      "GitHub": GitBranch,
+      "VS Code": FileCode,
+      "MySQL": Database,
+      "Ollama": Brain,
+      "Hugging Face": Brain,
+      "AWS": Cloud,
+      "Docker": Package,
+      "Jupyter": Monitor,
+      
+      // Soft Skills
+      "Problem-Solving": Lightbulb,
+      "Team Collaboration": Users,
+      "Communication": MessageSquare,
+      "Time Management": Clock,
+      "Leadership": Star,
+      "Adaptability": Zap
+    };
+    
+    return iconMap[skillName] || Code2;
+  };
+
   const skillCategories = [
     {
       title: "Programming Languages",
+      icon: Code2,
       skills: [
-        { name: "Python", level: 90, color: "tech-blue" },
-        { name: "C++", level: 85, color: "tech-purple" },
-        { name: "SQL", level: 80, color: "tech-cyan" },
-        { name: "Java", level: 75, color: "tech-green" },
-        { name: "JavaScript", level: 80, color: "tech-blue" }
+        { name: "Python", level: 90, color: "tech-blue", icon: "🐍" },
+        { name: "C++", level: 85, color: "tech-purple", icon: "⚡" },
+        { name: "SQL", level: 80, color: "tech-cyan", icon: "🗃️" },
+        { name: "Java", level: 75, color: "tech-green", icon: "☕" },
+        { name: "JavaScript", level: 80, color: "tech-blue", icon: "🟨" }
       ]
     },
     {
       title: "Technologies & Frameworks",
+      icon: Layers,
       skills: [
-        "PyTorch", "Django", "Flask", "LangChain", "Scikit-learn", 
-        "Linux", "Jenkins", "React", "Node.js"
+        { name: "PyTorch", icon: Brain },
+        { name: "Django", icon: Globe },
+        { name: "Flask", icon: Server },
+        { name: "LangChain", icon: Layers },
+        { name: "Scikit-learn", icon: Brain },
+        { name: "Linux", icon: Terminal },
+        { name: "Jenkins", icon: Settings },
+        { name: "React", icon: Code2 },
+        { name: "Node.js", icon: Server }
       ]
     },
     {
       title: "Tools & Platforms",
+      icon: Wrench,
       skills: [
-        "Git", "GitHub", "VS Code", "MySQL", "Ollama", "Hugging Face",
-        "AWS", "Docker", "Jupyter"
+        { name: "Git", icon: GitBranch },
+        { name: "GitHub", icon: GitBranch },
+        { name: "VS Code", icon: FileCode },
+        { name: "MySQL", icon: Database },
+        { name: "Ollama", icon: Brain },
+        { name: "Hugging Face", icon: Brain },
+        { name: "AWS", icon: Cloud },
+        { name: "Docker", icon: Package },
+        { name: "Jupyter", icon: Monitor }
       ]
     },
     {
       title: "Soft Skills",
+      icon: Users,
       skills: [
-        "Problem-Solving", "Team Collaboration", "Communication", 
-        "Time Management", "Leadership", "Adaptability"
+        { name: "Problem-Solving", icon: Lightbulb },
+        { name: "Team Collaboration", icon: Users },
+        { name: "Communication", icon: MessageSquare },
+        { name: "Time Management", icon: Clock },
+        { name: "Leadership", icon: Star },
+        { name: "Adaptability", icon: Zap }
       ]
     }
   ];
@@ -57,18 +122,22 @@ const Skills = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader>
-                <CardTitle className="text-xl font-semibold text-center">
+                <CardTitle className="text-xl font-semibold text-center flex items-center justify-center gap-3">
+                  <category.icon className="w-6 h-6 text-tech-blue" />
                   {category.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {category.title === "Programming Languages" ? (
-                  // Programming languages with progress bars
+                  // Programming languages with progress bars and emojis
                   <div className="space-y-4">
                     {category.skills.map((skill) => (
                       <div key={skill.name} className="space-y-2">
                         <div className="flex justify-between items-center">
-                          <span className="font-medium">{skill.name}</span>
+                          <div className="flex items-center gap-2">
+                            <span className="text-lg">{skill.icon}</span>
+                            <span className="font-medium">{skill.name}</span>
+                          </div>
                           <span className="text-sm text-muted-foreground">{skill.level}%</span>
                         </div>
                         <Progress 
@@ -79,16 +148,16 @@ const Skills = () => {
                     ))}
                   </div>
                 ) : (
-                  // Other categories with badges
-                  <div className="flex flex-wrap gap-2">
+                  // Other categories with icons and badges
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                     {category.skills.map((skill) => (
-                      <Badge 
-                        key={skill} 
-                        variant="secondary"
-                        className="px-3 py-1 bg-gradient-to-r from-tech-blue/20 to-tech-purple/20 border-tech-blue/30 hover:from-tech-blue/30 hover:to-tech-purple/30 transition-all duration-300"
+                      <div
+                        key={skill.name}
+                        className="flex items-center gap-2 p-3 rounded-lg bg-gradient-to-r from-tech-blue/10 to-tech-purple/10 border border-tech-blue/20 hover:from-tech-blue/20 hover:to-tech-purple/20 hover:border-tech-blue/40 transition-all duration-300 group"
                       >
-                        {skill}
-                      </Badge>
+                        <skill.icon className="w-4 h-4 text-tech-blue group-hover:text-tech-purple transition-colors" />
+                        <span className="text-sm font-medium truncate">{skill.name}</span>
+                      </div>
                     ))}
                   </div>
                 )}
