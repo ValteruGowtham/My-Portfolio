@@ -129,18 +129,15 @@ const Skills = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 {category.title === "Programming Languages" ? (
-                  // Programming languages with progress bars and emojis
-                  <div className="space-y-4">
+                  // Programming languages with emojis only
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                     {category.skills.map((skill) => (
-                      <div key={skill.name} className="space-y-2">
-                        <div className="flex items-center gap-2">
-                          <span className="text-lg">{skill.icon}</span>
-                          <span className="font-medium">{skill.name}</span>
-                        </div>
-                        <Progress 
-                          value={skill.level} 
-                          className="h-2"
-                        />
+                      <div
+                        key={skill.name}
+                        className="flex items-center gap-2 p-3 rounded-lg bg-gradient-to-r from-tech-blue/10 to-tech-purple/10 border border-tech-blue/20 hover:from-tech-blue/20 hover:to-tech-purple/20 hover:border-tech-blue/40 transition-all duration-300 group"
+                      >
+                        <span className="text-lg">{skill.icon}</span>
+                        <span className="text-sm font-medium truncate">{skill.name}</span>
                       </div>
                     ))}
                   </div>
