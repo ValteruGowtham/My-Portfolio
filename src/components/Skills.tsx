@@ -133,12 +133,9 @@ const Skills = () => {
                   <div className="space-y-4">
                     {category.skills.map((skill) => (
                       <div key={skill.name} className="space-y-2">
-                        <div className="flex justify-between items-center">
-                          <div className="flex items-center gap-2">
-                            <span className="text-lg">{skill.icon}</span>
-                            <span className="font-medium">{skill.name}</span>
-                          </div>
-                          <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-lg">{skill.icon}</span>
+                          <span className="font-medium">{skill.name}</span>
                         </div>
                         <Progress 
                           value={skill.level} 
