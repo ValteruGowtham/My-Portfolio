@@ -53,105 +53,52 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-              <div className="space-y-4">
-                {contactInfo.map((contact, index) => (
-                  <Card 
-                    key={contact.label}
-                    className="glass-card border-border/50 hover:border-tech-blue/50 transition-all duration-300 fade-in-up"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <CardContent className="p-4">
-                      <div className="flex items-center gap-4">
-                        <div className="p-3 rounded-full bg-gradient-to-br from-tech-blue/20 to-tech-purple/20">
-                          <contact.icon className="w-5 h-5 text-tech-blue" />
-                        </div>
-                        <div className="flex-1">
-                          <p className="font-semibold text-sm">{contact.label}</p>
-                          {contact.link ? (
-                            <a 
-                              href={contact.link}
-                              className="text-muted-foreground hover:text-tech-blue transition-colors"
-                              target={contact.link.startsWith('http') ? '_blank' : undefined}
-                              rel={contact.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                            >
-                              {contact.value}
-                            </a>
-                          ) : (
-                            <p className="text-muted-foreground">{contact.value}</p>
-                          )}
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Connect With Me</h3>
-              <div className="space-y-4">
-                {socialLinks.map((social, index) => (
-                  <Card 
-                    key={social.label}
-                    className="glass-card border-border/50 hover:border-tech-purple/50 transition-all duration-300 fade-in-up"
-                    style={{ animationDelay: `${0.3 + index * 0.1}s` }}
-                  >
-                    <CardContent className="p-4">
-                      <a 
-                        href={social.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-4 group"
-                      >
-                        <div className="p-3 rounded-full bg-gradient-to-br from-tech-purple/20 to-tech-cyan/20 group-hover:from-tech-purple/30 group-hover:to-tech-cyan/30 transition-all duration-300">
-                          <social.icon className="w-5 h-5 text-tech-purple" />
-                        </div>
-                        <div className="flex-1">
-                          <p className="font-semibold text-sm">{social.label}</p>
-                          <p className="text-muted-foreground group-hover:text-tech-purple transition-colors">
-                            {social.value}
-                          </p>
-                        </div>
-                      </a>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            {/* Availability */}
-            <Card className="glass-card border-border/50">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-stretch">
+          {/* Contact Information (left) */}
+          <div className="flex">
+            <Card className="glass-card border-border/50 h-full w-full">
               <CardContent className="p-6">
-                <h4 className="font-bold text-lg mb-3 text-tech-green">🟢 Currently Available</h4>
-                <p className="text-muted-foreground text-sm mb-4">
-                  Open to new opportunities in AI/ML engineering, full-stack development, 
-                  and innovative tech projects. Let's build something amazing together!
-                </p>
-                <div className="flex flex-wrap gap-2 text-xs">
-                  <span className="px-2 py-1 bg-tech-green/20 text-tech-green rounded">
-                    Full-time positions
-                  </span>
-                  <span className="px-2 py-1 bg-tech-blue/20 text-tech-blue rounded">
-                    Freelance projects
-                  </span>
-                  <span className="px-2 py-1 bg-tech-purple/20 text-tech-purple rounded">
-                    Collaborations
-                  </span>
+                <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+                <div className="space-y-4">
+                  {contactInfo.map((contact, index) => (
+                    <Card 
+                      key={contact.label}
+                      className="glass-card border-border/50 hover:border-tech-blue/50 transition-all duration-300 fade-in-up"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      <CardContent className="p-4">
+                        <div className="flex items-center gap-4">
+                          <div className="p-3 rounded-full bg-gradient-to-br from-tech-blue/20 to-tech-purple/20">
+                            <contact.icon className="w-5 h-5 text-tech-blue" />
+                          </div>
+                          <div className="flex-1">
+                            <p className="font-semibold text-sm">{contact.label}</p>
+                            {contact.link ? (
+                              <a 
+                                href={contact.link}
+                                className="text-muted-foreground hover:text-tech-blue transition-colors"
+                                target={contact.link.startsWith('http') ? '_blank' : undefined}
+                                rel={contact.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                              >
+                                {contact.value}
+                              </a>
+                            ) : (
+                              <p className="text-muted-foreground">{contact.value}</p>
+                            )}
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
                 </div>
               </CardContent>
             </Card>
           </div>
 
-          {/* Contact Form */}
-          <div>
-            <Card className="glass-card border-border/50">
-              <CardContent className="p-8">
+          {/* Contact Form (right) */}
+          <div className="flex">
+            <Card className="glass-card border-border/50 h-full w-full">
+              <CardContent className="p-8 flex flex-col h-full">
                 <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
                 <form className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
@@ -214,6 +161,63 @@ const Contact = () => {
               </CardContent>
             </Card>
           </div>
+        </div>
+
+        {/* Social Links - full width row */}
+        <div className="max-w-6xl mx-auto mt-12">
+          <h3 className="text-2xl font-bold mb-6">Connect With Me</h3>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {socialLinks.map((social, index) => (
+              <Card 
+                key={social.label}
+                className="glass-card border-border/50 hover:border-tech-purple/50 transition-all duration-300 fade-in-up"
+                style={{ animationDelay: `${0.3 + index * 0.1}s` }}
+              >
+                <CardContent className="p-4">
+                  <a 
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 group"
+                  >
+                    <div className="p-3 rounded-full bg-gradient-to-br from-tech-purple/20 to-tech-cyan/20 group-hover:from-tech-purple/30 group-hover:to-tech-cyan/30 transition-all duration-300">
+                      <social.icon className="w-5 h-5 text-tech-purple" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-semibold text-sm">{social.label}</p>
+                      <p className="text-muted-foreground group-hover:text-tech-purple transition-colors">
+                        {social.value}
+                      </p>
+                    </div>
+                  </a>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Availability - separate wide box */}
+        <div className="max-w-6xl mx-auto mt-8">
+          <Card className="relative overflow-hidden glass-card border border-tech-green/40 hover:border-tech-green/60 transition-all duration-300">
+            <div className="pointer-events-none absolute -inset-1 bg-gradient-to-r from-tech-green/15 via-tech-blue/10 to-tech-purple/15 blur-2xl opacity-40" />
+            <CardContent className="relative p-6">
+              <h4 className="font-bold text-lg mb-3 text-tech-green">🟢 Currently Available</h4>
+              <p className="text-muted-foreground text-sm mb-4">
+                Open to new opportunities in AI/ML engineering, full-stack development, and innovative tech projects. Let's build something amazing together!
+              </p>
+              <div className="flex flex-wrap gap-2 text-xs">
+                <span className="px-2 py-1 bg-tech-green/20 text-tech-green rounded">
+                  Full-time positions
+                </span>
+                <span className="px-2 py-1 bg-tech-blue/20 text-tech-blue rounded">
+                  Internships
+                </span>
+                <span className="px-2 py-1 bg-tech-purple/20 text-tech-purple rounded">
+                  Freelance projects
+                </span>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

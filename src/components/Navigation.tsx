@@ -59,10 +59,13 @@ const Navigation = () => {
               </button>
             ))}
             <Button 
+              asChild
               size="sm"
               className="bg-gradient-to-r from-tech-blue to-tech-purple hover:opacity-90 transition-opacity"
             >
-              Download CV
+              <a href="/cv.pdf" download="Gowtham_Valteru_CV.pdf">
+                Download CV
+              </a>
             </Button>
           </div>
 
@@ -89,10 +92,13 @@ const Navigation = () => {
                 </button>
               ))}
               <Button 
+                asChild
                 size="sm"
                 className="w-full bg-gradient-to-r from-tech-blue to-tech-purple hover:opacity-90 transition-opacity mt-4"
               >
-                Download CV
+                <a href="/cv.pdf" download="Gowtham_Valteru_CV.pdf">
+                  Download CV
+                </a>
               </Button>
             </div>
           </div>

@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail, Phone } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="about" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-card/50" />
       
@@ -50,11 +50,14 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-tech-blue to-tech-purple hover:opacity-90 transition-opacity"
+              onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
               View Projects
             </Button>
-            <Button variant="outline" size="lg">
-              Download Resume
+            <Button asChild variant="outline" size="lg">
+              <a href="/cv.pdf" download="Gowtham_Valteru_CV.pdf">
+                Download Resume
+              </a>
             </Button>
           </div>
 

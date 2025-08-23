@@ -1,3 +1,82 @@
+## Portfolio
+
+A modern personal portfolio website built with React, TypeScript, Vite, Tailwind CSS, and shadcn/ui. Smooth scrolling navigation, responsive sections, and a clean, customizable design.
+
+### Tech Stack
+- **Vite** (React + TypeScript)
+- **Tailwind CSS**
+- **shadcn/ui** + **Radix UI**
+- **Lucide Icons**
+
+### Getting Started
+1. Install Node.js (LTS recommended).
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the dev server:
+   ```bash
+   npm run dev
+   ```
+   Open `http://localhost:8080` in your browser.
+
+### Scripts
+- `npm run dev`: Start Vite dev server
+- `npm run build`: Production build
+- `npm run build:dev`: Development-mode build
+- `npm run preview`: Preview the built app
+- `npm run lint`: Run ESLint
+
+### Project Structure (high level)
+```text
+public/
+  favicon.svg
+  cv.pdf            # Place your CV here
+src/
+  components/
+    Navigation.tsx
+    Hero.tsx
+    Skills.tsx
+    Projects.tsx
+    Education.tsx
+    Achievements.tsx
+    Contact.tsx
+  pages/
+    Index.tsx
+index.html
+```
+
+### Customization
+- **Site title and meta**: edit `index.html` (`<title>portfolio</title>` and meta tags).
+- **Favicon**: replace `public/favicon.svg` with your own (or use `public/favicon.ico`).
+- **Navigation & sections**: the site scrolls to section IDs:
+  - `#about` (in `Hero.tsx`)
+  - `#skills` (in `Skills.tsx`)
+  - `#projects` (in `Projects.tsx`)
+  - `#education` (in `Education.tsx`)
+  - `#achievements` (in `Achievements.tsx`)
+  - `#contact` (in `Contact.tsx`)
+- **Download CV/Resume**:
+  - Place your file at `public/cv.pdf`.
+  - Buttons are wired in `src/components/Navigation.tsx` and `src/components/Hero.tsx` using the `asChild` prop; update the `download` filename if desired.
+- **Skills**: edit lists in `src/components/Skills.tsx` (programming languages, technologies, tools, soft skills). Boxes have consistent sizing and a hover backlight effect.
+- **Achievements**: update the list in `src/components/Achievements.tsx`.
+
+### Build & Deploy
+1. Build:
+   ```bash
+   npm run build
+   ```
+2. Preview locally:
+   ```bash
+   npm run preview
+   ```
+3. Deploy the `dist/` folder to any static host (Vercel, Netlify, GitHub Pages, etc.).
+
+### Notes
+- Dev server runs on port `8080` and listens on all interfaces.
+- Smooth scrolling uses section IDs and `scrollIntoView`.
+
 # Welcome to your Lovable project
 
 ## Project info

@@ -15,7 +15,8 @@ const Projects = () => {
         "Implemented multimodal data fusion architecture",
         "90%+ accuracy in early disease detection",
         "Real-time health monitoring capabilities"
-      ]
+      ],
+      codeUrl: "https://github.com/ValteruGowtham/Personalized-AI-Health-Assistant-Using-Multimodal-Machine-Learning"
     },
     {
       title: "AI-Powered Research Assistant (RAG System)",
@@ -27,7 +28,8 @@ const Projects = () => {
         "Custom document processing pipeline",
         "Semantic search using FAISS vector database", 
         "LLM-powered Q&A with contextual awareness"
-      ]
+      ],
+      codeUrl: "https://github.com/ValteruGowtham/AI-Powered-Research-Assistant-RAG-System"
     },
     {
       title: "Dynamic Route Optimization System",
@@ -39,7 +41,8 @@ const Projects = () => {
         "Real-time route optimization",
         "Scalable graph-based architecture",
         "Significant delivery time reduction"
-      ]
+      ],
+      codeUrl: "https://github.com/ValteruGowtham/Dynamic-Route-Optimization-for-Delivery-Systems"
     },
     {
       title: "AI Interview Coach Web App",
@@ -51,7 +54,8 @@ const Projects = () => {
         "Job-specific question generation",
         "Real-time response evaluation",
         "User progress tracking and analytics"
-      ]
+      ],
+      codeUrl: "https://github.com/ValteruGowtham/AI-Interview-Coach-Web-App"
     },
     {
       title: "Emotion Recognition from Social Media",
@@ -63,7 +67,8 @@ const Projects = () => {
         "Multimodal emotion detection",
         "Real-time video processing",
         "High accuracy facial expression recognition"
-      ]
+      ],
+      codeUrl: "https://github.com/ValteruGowtham/Emotion-recogination-using-social-media-content-"
     },
     {
       title: "News Article Recommender System",
@@ -75,7 +80,8 @@ const Projects = () => {
         "Hybrid recommendation approach",
         "Natural language processing for content analysis",
         "Personalized user experience"
-      ]
+      ],
+      codeUrl: "https://github.com/ValteruGowtham/News-Article-Recommender"
     }
   ];
 
@@ -160,20 +166,15 @@ const Projects = () => {
                 {/* Action buttons */}
                 <div className="flex gap-3 pt-2">
                   <Button 
+                    asChild
                     size="sm" 
                     variant="outline"
                     className="hover:bg-tech-blue/10 hover:border-tech-blue/50"
                   >
-                    <Github className="w-4 h-4 mr-2" />
-                    Code
-                  </Button>
-                  <Button 
-                    size="sm" 
-                    variant="outline"
-                    className="hover:bg-tech-purple/10 hover:border-tech-purple/50"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Demo
+                    <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
+                      <Github className="w-4 h-4 mr-2" />
+                      Code
+                    </a>
                   </Button>
                 </div>
               </CardContent>

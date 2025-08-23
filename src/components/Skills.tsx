@@ -54,8 +54,7 @@ const Skills = () => {
         { name: "Python", level: 90, color: "tech-blue", icon: "🐍" },
         { name: "C++", level: 85, color: "tech-purple", icon: "⚡" },
         { name: "SQL", level: 80, color: "tech-cyan", icon: "🗃️" },
-        { name: "Java", level: 75, color: "tech-green", icon: "☕" },
-        { name: "JavaScript", level: 80, color: "tech-blue", icon: "🟨" }
+        { name: "Java", level: 75, color: "tech-green", icon: "☕" }
       ]
     },
     {
@@ -68,9 +67,7 @@ const Skills = () => {
         { name: "LangChain", icon: Layers },
         { name: "Scikit-learn", icon: Brain },
         { name: "Linux", icon: Terminal },
-        { name: "Jenkins", icon: Settings },
-        { name: "React", icon: Code2 },
-        { name: "Node.js", icon: Server }
+        { name: "Jenkins", icon: Settings }
       ]
     },
     {
@@ -134,7 +131,7 @@ const Skills = () => {
                     {category.skills.map((skill) => (
                       <div
                         key={skill.name}
-                        className="flex items-center gap-2 p-3 rounded-lg bg-gradient-to-r from-tech-blue/10 to-tech-purple/10 border border-tech-blue/20 hover:from-tech-blue/20 hover:to-tech-purple/20 hover:border-tech-blue/40 transition-all duration-300 group"
+                        className="flex items-center gap-2 p-3 rounded-lg bg-gradient-to-r from-tech-blue/10 to-tech-purple/10 border border-tech-blue/20 hover:from-tech-blue/20 hover:to-tech-purple/20 hover:border-tech-blue/40 transition-all duration-300 group w-full h-12 transition-shadow hover:shadow-[0_0_20px_rgba(14,165,233,0.35)]"
                       >
                         <span className="text-lg">{skill.icon}</span>
                         <span className="text-sm font-medium truncate">{skill.name}</span>
@@ -147,7 +144,7 @@ const Skills = () => {
                     {category.skills.map((skill) => (
                       <div
                         key={skill.name}
-                        className="flex items-center gap-2 p-3 rounded-lg bg-gradient-to-r from-tech-blue/10 to-tech-purple/10 border border-tech-blue/20 hover:from-tech-blue/20 hover:to-tech-purple/20 hover:border-tech-blue/40 transition-all duration-300 group"
+                        className="flex items-center gap-2 p-3 rounded-lg bg-gradient-to-r from-tech-blue/10 to-tech-purple/10 border border-tech-blue/20 hover:from-tech-blue/20 hover:to-tech-purple/20 hover:border-tech-blue/40 transition-all duration-300 group w-full h-12 transition-shadow hover:shadow-[0_0_20px_rgba(14,165,233,0.35)]"
                       >
                         <skill.icon className="w-4 h-4 text-tech-blue group-hover:text-tech-purple transition-colors" />
                         <span className="text-sm font-medium truncate">{skill.name}</span>

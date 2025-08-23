@@ -57,13 +57,6 @@ const Education = () => {
     }
   ];
 
-  const achievements = [
-    "Participated in Smart India Hackathon, showcasing strong problem-solving and innovation skills",
-    "Ranked among the top 10 participants in the AWS Prompt Engineer Hackathon",
-    "Completed comprehensive Machine Learning and Data Science course from GeeksforGeeks",
-    "Active contributor to open-source projects and technical communities"
-  ];
-
   const getStatusColor = (status: string) => {
     return status === "Current" ? "tech-green" : "tech-blue";
   };
@@ -82,7 +75,7 @@ const Education = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-text">Education & Achievements</span>
+            <span className="gradient-text">Education</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Academic journey and professional certifications that shaped my expertise
@@ -146,9 +139,8 @@ const Education = () => {
             </div>
           </div>
 
-          {/* Certificates & Achievements */}
+          {/* Certifications */}
           <div className="space-y-8">
-            {/* Certificates */}
             <div>
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
                 <Award className="w-6 h-6 text-tech-purple" />
@@ -182,37 +174,14 @@ const Education = () => {
               </div>
             </div>
 
-            {/* Achievements */}
-            <div>
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <span className="text-2xl">🏆</span>
-                Key Achievements
-              </h3>
-              <Card className="glass-card border-border/50">
-                <CardContent className="p-6">
-                  <ul className="space-y-3">
-                    {achievements.map((achievement, index) => (
-                      <li 
-                        key={index}
-                        className="text-sm text-muted-foreground flex items-start fade-in-up"
-                        style={{ animationDelay: `${0.6 + index * 0.1}s` }}
-                      >
-                        <span className="text-tech-green mr-2 mt-1">▪</span>
-                        {achievement}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-
             {/* Training */}
             <div>
               <h3 className="text-xl font-bold mb-4">Specialized Training</h3>
-              <Card className="glass-card border-border/50">
-                <CardContent className="p-4">
-                  <div className="space-y-3">
-                    <div>
+              <Card className="relative overflow-hidden glass-card border border-tech-blue/40 hover:border-tech-blue/60 transition-all duration-300">
+                <div className="pointer-events-none absolute -inset-1 bg-gradient-to-r from-tech-blue/15 via-tech-purple/10 to-tech-cyan/15 blur-2xl opacity-40" />
+                <CardContent className="relative p-4">
+                  <div className="space-y-2">
+                    <div className="bg-gradient-to-r from-tech-blue/5 to-tech-purple/5 rounded-md p-3 border border-border/40 hover:border-tech-blue/40 hover:shadow-[0_0_18px_rgba(14,165,233,0.3)] transition-all">
                       <h4 className="font-semibold text-sm text-tech-blue">
                         Complete Machine Learning and Data Science
                       </h4>
