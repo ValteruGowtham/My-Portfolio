@@ -1,6 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { GraduationCap, Award, Calendar } from "lucide-react";
+import { GraduationCap, Award, Calendar, MapPin } from "lucide-react";
 
 const Education = () => {
   const education = [
@@ -12,7 +10,7 @@ const Education = () => {
       period: "Aug 2022 - Present",
       location: "Phagwara, Punjab",
       status: "Current",
-      type: "university"
+      type: "🎓"
     },
     {
       institution: "VDA Junior College",
@@ -22,7 +20,7 @@ const Education = () => {
       period: "Jun 2020 - Mar 2022",
       location: "Vizag, Andhra Pradesh",
       status: "Completed",
-      type: "college"
+      type: "📚"
     },
     {
       institution: "SASI E.M HIGH School",
@@ -32,7 +30,7 @@ const Education = () => {
       period: "Jun 2019 - Mar 2020",
       location: "Tanuku, Andhra Pradesh",
       status: "Completed",
-      type: "school"
+      type: "🏫"
     }
   ];
 
@@ -57,145 +55,192 @@ const Education = () => {
     }
   ];
 
-  const getStatusColor = (status: string) => {
-    return status === "Current" ? "tech-green" : "tech-blue";
-  };
-
-  const getTypeIcon = (type: string) => {
-    switch(type) {
-      case "university": return "🎓";
-      case "college": return "📚";
-      case "school": return "🏫";
-      default: return "🎓";
-    }
-  };
-
   return (
-    <section id="education" className="py-20 px-6">
-      <div className="container mx-auto">
+    <section id="education" className="section-container bg-reverse-dark radial-overlay">
+      <div className="content-container">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-text">Education</span>
+          <h2 
+            className="font-black mb-4 gradient-text"
+            style={{ 
+              fontSize: 'clamp(2rem, 5vw, 3rem)',
+              letterSpacing: '-0.03em'
+            }}
+          >
+            Education
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-[#d0d0d0] text-lg max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
             Academic journey and professional certifications that shaped my expertise
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Education Timeline */}
+          {/* Education Timeline - 2/3 width */}
           <div className="lg:col-span-2">
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <GraduationCap className="w-6 h-6 text-tech-blue" />
+            <div className="flex items-center gap-3 mb-8">
+              <GraduationCap className="w-7 h-7 text-white" />
+              <h3 className="text-white font-bold text-2xl" style={{ letterSpacing: '-0.02em' }}>
                 Academic Background
               </h3>
-              
+            </div>
+            
+            <div className="relative space-y-6">
+              {/* Timeline Line */}
+              <div 
+                className="absolute left-[31px] top-8 bottom-8 w-[3px] rounded-full"
+                style={{
+                  background: 'linear-gradient(180deg, #ffffff, #e0e0e0, transparent)',
+                }}
+              />
+
               {education.map((edu, index) => (
-                <Card 
-                  key={edu.institution}
-                  className="glass-card border-border/50 hover:border-tech-blue/50 transition-all duration-300 fade-in-up"
+                <div key={edu.institution} className="relative flex gap-6 fade-in-up group"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div className="flex items-start gap-3">
-                        <div className="text-2xl">{getTypeIcon(edu.type)}</div>
-                        <div>
-                          <CardTitle className="text-lg font-bold">
-                            {edu.institution}
-                          </CardTitle>
-                          <p className="text-tech-blue font-semibold">
-                            {edu.degree} - {edu.field}
-                          </p>
-                          <p className="text-sm text-muted-foreground">
-                            📍 {edu.location}
-                          </p>
+                  {/* Timeline Icon */}
+                  <div 
+                    className="relative flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center text-2xl pulse-animation transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110"
+                    style={{
+                      background: 'linear-gradient(135deg, #ffffff, #e0e0e0)',
+                      color: '#1a1a1a',
+                      boxShadow: '0 8px 32px rgba(255, 255, 255, 0.3), 0 0 0 0 rgba(255, 255, 255, 0.4)',
+                      zIndex: 1
+                    }}
+                  >
+                    {edu.type}
+                  </div>
+
+                  {/* Content Card */}
+                  <div 
+                    className="flex-1 rounded-[20px] p-6 transition-all duration-300 group-hover:transform group-hover:-translate-y-3 group-hover:translate-x-2"
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.05)',
+                      backdropFilter: 'blur(10px)',
+                      WebkitBackdropFilter: 'blur(10px)',
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+                      borderLeft: '5px solid rgba(255, 255, 255, 0.3)'
+                    }}
+                  >
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex-1">
+                        <h4 className="text-white font-bold text-lg mb-1">{edu.institution}</h4>
+                        <p className="text-[#e0e0e0] font-semibold text-sm mb-1">
+                          {edu.degree} - {edu.field}
+                        </p>
+                        <div className="flex items-center gap-1 text-[#b0b0b0] text-sm">
+                          <MapPin className="w-3 h-3" />
+                          {edu.location}
                         </div>
                       </div>
                       <div className="text-right">
-                        <Badge 
-                          className={`bg-gradient-to-r from-${getStatusColor(edu.status)} to-${getStatusColor(edu.status)}/80 text-white border-none mb-2`}
+                        <span 
+                          className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-2"
+                          style={{
+                            background: edu.status === 'Current' 
+                              ? 'rgba(76, 175, 80, 0.2)' 
+                              : 'rgba(255, 255, 255, 0.1)',
+                            color: edu.status === 'Current' ? '#4caf50' : '#ffffff',
+                            border: edu.status === 'Current'
+                              ? '1px solid rgba(76, 175, 80, 0.4)'
+                              : '1px solid rgba(255, 255, 255, 0.2)'
+                          }}
                         >
                           {edu.status}
-                        </Badge>
-                        <div className="flex items-center text-sm text-muted-foreground">
-                          <Calendar className="w-4 h-4 mr-1" />
+                        </span>
+                        <div className="flex items-center gap-1 text-[#b0b0b0] text-xs justify-end">
+                          <Calendar className="w-3 h-3" />
                           {edu.period}
                         </div>
                       </div>
                     </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-muted-foreground">CGPA:</span>
-                      <span className="text-lg font-bold text-tech-green">
-                        {edu.cgpa}/10.0
-                      </span>
+                    
+                    <div className="flex items-center justify-between pt-3 border-t border-white/10">
+                      <span className="text-[#b0b0b0] text-sm">CGPA:</span>
+                      <span className="text-white font-bold text-lg">{edu.cgpa}/10.0</span>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
 
-          {/* Certifications */}
+          {/* Certifications & Training - 1/3 width */}
           <div className="space-y-8">
+            {/* Certifications */}
             <div>
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <Award className="w-6 h-6 text-tech-purple" />
-                Certifications
-              </h3>
+              <div className="flex items-center gap-3 mb-6">
+                <Award className="w-6 h-6 text-white" />
+                <h3 className="text-white font-bold text-xl" style={{ letterSpacing: '-0.02em' }}>
+                  Certifications
+                </h3>
+              </div>
               <div className="space-y-4">
                 {certificates.map((cert, index) => (
-                  <Card 
+                  <div 
                     key={cert.title}
-                    className="glass-card border-border/50 hover:border-tech-purple/50 transition-all duration-300 fade-in-up"
-                    style={{ animationDelay: `${0.3 + index * 0.1}s` }}
+                    className="rounded-[16px] p-4 fade-in-up transition-all duration-300 hover:transform hover:-translate-y-2"
+                    style={{
+                      animationDelay: `${0.3 + index * 0.1}s`,
+                      background: 'rgba(255, 255, 255, 0.05)',
+                      backdropFilter: 'blur(10px)',
+                      WebkitBackdropFilter: 'blur(10px)',
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
+                    }}
                   >
-                    <CardContent className="p-4">
-                      <div className="space-y-2">
-                        <div className="flex items-start justify-between">
-                          <h4 className="font-semibold text-sm">{cert.title}</h4>
-                          <Badge variant="outline" className="text-xs">
-                            {cert.type}
-                          </Badge>
-                        </div>
-                        <p className="text-sm text-tech-purple font-medium">
-                          {cert.issuer}
-                        </p>
-                        <p className="text-xs text-muted-foreground">
-                          {cert.date}
-                        </p>
+                    <div className="space-y-2">
+                      <div className="flex items-start justify-between">
+                        <h4 className="text-white font-semibold text-sm flex-1">{cert.title}</h4>
+                        <span 
+                          className="px-2 py-1 rounded-full text-xs font-bold"
+                          style={{
+                            background: 'rgba(255, 255, 255, 0.1)',
+                            border: '1px solid rgba(255, 255, 255, 0.2)'
+                          }}
+                        >
+                          {cert.type}
+                        </span>
                       </div>
-                    </CardContent>
-                  </Card>
+                      <p className="text-[#e0e0e0] font-medium text-sm">{cert.issuer}</p>
+                      <p className="text-[#b0b0b0] text-xs">{cert.date}</p>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
 
             {/* Training */}
             <div>
-              <h3 className="text-xl font-bold mb-4">Specialized Training</h3>
-              <Card className="relative overflow-hidden glass-card border border-tech-blue/40 hover:border-tech-blue/60 transition-all duration-300">
-                <div className="pointer-events-none absolute -inset-1 bg-gradient-to-r from-tech-blue/15 via-tech-purple/10 to-tech-cyan/15 blur-2xl opacity-40" />
-                <CardContent className="relative p-4">
-                  <div className="space-y-2">
-                    <div className="bg-gradient-to-r from-tech-blue/5 to-tech-purple/5 rounded-md p-3 border border-border/40 hover:border-tech-blue/40 hover:shadow-[0_0_18px_rgba(14,165,233,0.3)] transition-all">
-                      <h4 className="font-semibold text-sm text-tech-blue">
-                        Complete Machine Learning and Data Science
-                      </h4>
-                      <p className="text-xs text-muted-foreground">
-                        GeeksforGeeks • May 2024 - Jun 2024
-                      </p>
-                      <p className="text-xs text-muted-foreground mt-1">
-                        Comprehensive course covering data preprocessing, feature engineering, 
-                        model optimization, and real-world problem-solving using Python.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <h3 className="text-white font-bold text-lg mb-4">Specialized Training</h3>
+              <div 
+                className="relative overflow-hidden rounded-[16px] p-5"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(10px)',
+                  WebkitBackdropFilter: 'blur(10px)',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
+                }}
+              >
+                <div 
+                  className="pointer-events-none absolute -inset-1 opacity-40 blur-2xl"
+                  style={{
+                    background: 'radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%)'
+                  }}
+                />
+                <div className="relative space-y-2">
+                  <h4 className="text-white font-bold text-sm">
+                    Complete Machine Learning and Data Science
+                  </h4>
+                  <p className="text-[#b0b0b0] text-xs">
+                    GeeksforGeeks • May 2024 - Jun 2024
+                  </p>
+                  <p className="text-[#d0d0d0] text-xs leading-relaxed mt-2">
+                    Comprehensive course covering data preprocessing, feature engineering, 
+                    model optimization, and real-world problem-solving using Python.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

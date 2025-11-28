@@ -1,60 +1,19 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
 import { 
   Code2, Database, Globe, Server, GitBranch, Terminal, 
-  Cpu, Brain, Cloud, Smartphone, Monitor, FileCode,
-  Settings, Wrench, Zap, Shield, Package, Layers,
-  Users, Clock, MessageSquare, Target, Lightbulb, Star
+  Brain, Cloud, FileCode, Settings, Package, Monitor,
+  Layers, Users, MessageSquare, Clock, Star, Lightbulb, Zap
 } from "lucide-react";
 
 const Skills = () => {
-  // Icon mapping for technologies and tools
-  const getSkillIcon = (skillName: string) => {
-    const iconMap: Record<string, any> = {
-      // Technologies & Frameworks
-      "PyTorch": Brain,
-      "Django": Globe,
-      "Flask": Server,
-      "LangChain": Layers,
-      "Scikit-learn": Brain,
-      "Linux": Terminal,
-      "Jenkins": Settings,
-      "React": Code2,
-      "Node.js": Server,
-      
-      // Tools & Platforms
-      "Git": GitBranch,
-      "GitHub": GitBranch,
-      "VS Code": FileCode,
-      "MySQL": Database,
-      "Ollama": Brain,
-      "Hugging Face": Brain,
-      "AWS": Cloud,
-      "Docker": Package,
-      "Jupyter": Monitor,
-      
-      // Soft Skills
-      "Problem-Solving": Lightbulb,
-      "Team Collaboration": Users,
-      "Communication": MessageSquare,
-      "Time Management": Clock,
-      "Leadership": Star,
-      "Adaptability": Zap
-    };
-    
-    return iconMap[skillName] || Code2;
-  };
-
   const skillCategories = [
     {
       title: "Programming Languages",
       icon: Code2,
       skills: [
-        { name: "Python", level: 90, color: "tech-blue", icon: "🐍" },
-        { name: "C++", level: 85, color: "tech-purple", icon: "⚡" },
-        { name: "SQL", level: 80, color: "tech-cyan", icon: "🗃️" },
-        { name: "Java", level: 75, color: "tech-green", icon: "☕" }
+        { name: "Python", icon: "🐍" },
+        { name: "C++", icon: "⚡" },
+        { name: "SQL", icon: "🗃️" },
+        { name: "Java", icon: "☕" }
       ]
     },
     {
@@ -72,7 +31,7 @@ const Skills = () => {
     },
     {
       title: "Tools & Platforms",
-      icon: Wrench,
+      icon: Settings,
       skills: [
         { name: "Git", icon: GitBranch },
         { name: "GitHub", icon: GitBranch },
@@ -99,96 +58,116 @@ const Skills = () => {
     }
   ];
 
+  const specializations = [
+    {
+      title: "Machine Learning & AI",
+      description: "Deep learning, NLP, computer vision, and intelligent systems",
+      icon: "🤖"
+    },
+    {
+      title: "Web Development",
+      description: "Full-stack development with modern frameworks and technologies",
+      icon: "🌐"
+    },
+    {
+      title: "Data Science",
+      description: "Data analysis, visualization, and predictive modeling",
+      icon: "📊"
+    }
+  ];
+
   return (
-    <section id="skills" className="py-20 px-6">
-      <div className="container mx-auto">
+    <section id="skills" className="section-container bg-dark-gradient radial-overlay">
+      <div className="content-container">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-text">Technical Skills</span>
+          <h2 
+            className="font-black mb-4 gradient-text"
+            style={{ 
+              fontSize: 'clamp(2rem, 5vw, 3rem)',
+              letterSpacing: '-0.03em'
+            }}
+          >
+            Technical Skills
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-[#d0d0d0] text-lg max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
             A comprehensive overview of my technical expertise and capabilities
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        {/* Skills Grid */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {skillCategories.map((category, index) => (
-            <Card 
-              key={category.title} 
-              className="glass-card border-border/50 fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+            <div 
+              key={category.title}
+              className="glass-card rounded-[20px] p-6 fade-in-up"
+              style={{ 
+                animationDelay: `${index * 0.1}s`,
+                background: 'rgba(255, 255, 255, 0.05)',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
+              }}
             >
-              <CardHeader>
-                <CardTitle className="text-xl font-semibold text-center flex items-center justify-center gap-3">
-                  <category.icon className="w-6 h-6 text-tech-blue" />
-                  {category.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {category.title === "Programming Languages" ? (
-                  // Programming languages with emojis only
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    {category.skills.map((skill) => (
-                      <div
-                        key={skill.name}
-                        className="flex items-center gap-2 p-3 rounded-lg bg-gradient-to-r from-tech-blue/10 to-tech-purple/10 border border-tech-blue/20 hover:from-tech-blue/20 hover:to-tech-purple/20 hover:border-tech-blue/40 transition-all duration-300 group w-full h-12 transition-shadow hover:shadow-[0_0_20px_rgba(14,165,233,0.35)]"
-                      >
-                        <span className="text-lg">{skill.icon}</span>
-                        <span className="text-sm font-medium truncate">{skill.name}</span>
-                      </div>
-                    ))}
+              <div className="text-center mb-6">
+                <div className="flex items-center justify-center gap-3">
+                  <category.icon className="w-6 h-6 text-white" />
+                  <h3 className="text-white font-bold text-xl" style={{ letterSpacing: '-0.02em' }}>
+                    {category.title}
+                  </h3>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {category.skills.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className="tech-pill flex items-center justify-center gap-2 py-3 px-4 transition-all duration-300 hover:transform hover:-translate-y-2"
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.1)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      borderRadius: '50px'
+                    }}
+                  >
+                    {typeof skill.icon === 'string' ? (
+                      <span className="text-lg">{skill.icon}</span>
+                    ) : (
+                      <skill.icon className="w-4 h-4 text-white" />
+                    )}
+                    <span className="text-white text-sm font-bold">{skill.name}</span>
                   </div>
-                ) : (
-                  // Other categories with icons and badges
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    {category.skills.map((skill) => (
-                      <div
-                        key={skill.name}
-                        className="flex items-center gap-2 p-3 rounded-lg bg-gradient-to-r from-tech-blue/10 to-tech-purple/10 border border-tech-blue/20 hover:from-tech-blue/20 hover:to-tech-purple/20 hover:border-tech-blue/40 transition-all duration-300 group w-full h-12 transition-shadow hover:shadow-[0_0_20px_rgba(14,165,233,0.35)]"
-                      >
-                        <skill.icon className="w-4 h-4 text-tech-blue group-hover:text-tech-purple transition-colors" />
-                        <span className="text-sm font-medium truncate">{skill.name}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </CardContent>
-            </Card>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
 
         {/* Specializations */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold mb-8">Core Specializations</h3>
+        <div className="text-center mb-12">
+          <h3 
+            className="text-white font-bold text-2xl mb-8"
+            style={{ letterSpacing: '-0.02em' }}
+          >
+            Core Specializations
+          </h3>
           <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Machine Learning & AI",
-                description: "Deep learning, NLP, computer vision, and intelligent systems",
-                icon: "🤖"
-              },
-              {
-                title: "Web Development",
-                description: "Full-stack development with modern frameworks and technologies",
-                icon: "🌐"
-              },
-              {
-                title: "Data Science",
-                description: "Data analysis, visualization, and predictive modeling",
-                icon: "📊"
-              }
-            ].map((spec, index) => (
-              <Card 
+            {specializations.map((spec, index) => (
+              <div 
                 key={spec.title}
-                className="glass-card border-border/50 hover:border-tech-blue/50 transition-all duration-300 fade-in-up"
-                style={{ animationDelay: `${0.5 + index * 0.1}s` }}
+                className="rounded-[20px] p-6 text-center fade-in-up transition-all duration-300 hover:transform hover:-translate-y-8 hover:scale-[1.01]"
+                style={{
+                  animationDelay: `${0.5 + index * 0.1}s`,
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(10px)',
+                  WebkitBackdropFilter: 'blur(10px)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
+                }}
               >
-                <CardContent className="p-6 text-center">
-                  <div className="text-4xl mb-4">{spec.icon}</div>
-                  <h4 className="text-lg font-semibold mb-2">{spec.title}</h4>
-                  <p className="text-muted-foreground text-sm">{spec.description}</p>
-                </CardContent>
-              </Card>
+                <div className="text-5xl mb-4">{spec.icon}</div>
+                <h4 className="text-white font-bold text-lg mb-2">{spec.title}</h4>
+                <p className="text-[#d0d0d0] text-sm">{spec.description}</p>
+              </div>
             ))}
           </div>
         </div>

@@ -8,7 +8,7 @@ import Achievements from "@/components/Achievements";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen" style={{ background: '#1a1a1a' }}>
       <Navigation />
       <Hero />
       <Skills />
@@ -18,10 +18,19 @@ const Index = () => {
       <Contact />
       
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-border/50">
-        <div className="container mx-auto text-center">
-          <p className="text-muted-foreground text-sm">
+      <footer 
+        className="py-8 px-10"
+        style={{
+          borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+          background: 'rgba(26, 26, 26, 0.95)'
+        }}
+      >
+        <div className="max-w-[1600px] mx-auto text-center">
+          <p className="text-[#b0b0b0] text-sm">
             © 2024 Gowtham Valteru. Built with React, TypeScript, and Tailwind CSS.
+          </p>
+          <p className="text-[#b0b0b0] text-xs mt-2">
+            Designed with a matte black aesthetic for a modern, professional portfolio experience.
           </p>
         </div>
       </footer>
