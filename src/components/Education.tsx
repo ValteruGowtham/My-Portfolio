@@ -1,4 +1,4 @@
-import { GraduationCap, Award, Calendar, MapPin } from "lucide-react";
+import { GraduationCap, Award, Calendar, MapPin, BookOpen } from "lucide-react";
 
 const Education = () => {
   const education = [
@@ -16,7 +16,7 @@ const Education = () => {
       institution: "VDA Junior College",
       degree: "Intermediate",
       field: "Science",
-      cgpa: "9.7",
+      cgpa: "95.4%",
       period: "Jun 2020 - Mar 2022",
       location: "Vizag, Andhra Pradesh",
       status: "Completed",
@@ -26,7 +26,7 @@ const Education = () => {
       institution: "SASI E.M HIGH School",
       degree: "Secondary Education",
       field: "General",
-      cgpa: "10.0",
+      cgpa: "100%",
       period: "Jun 2019 - Mar 2020",
       location: "Tanuku, Andhra Pradesh",
       status: "Completed",
@@ -56,9 +56,25 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="section-container bg-reverse-dark radial-overlay">
-      <div className="content-container">
+    <section id="education" className="section-container relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #1f1f1f 0%, #1a1a1a 50%, #1f1f1f 100%)' }}>
+      {/* Animated floating particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 right-20 w-1.5 h-1.5 rounded-full bg-white/25 float-animation" />
+        <div className="absolute top-1/3 left-10 w-1 h-1 rounded-full bg-white/30 float-animation" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-1/4 right-1/4 w-2 h-2 rounded-full bg-white/15 float-animation" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/4 w-1 h-1 rounded-full bg-white/20 float-animation" style={{ animationDelay: '3s' }} />
+      </div>
+      
+      {/* Gradient orbs */}
+      <div className="absolute top-1/4 right-0 w-72 h-72 rounded-full blur-3xl opacity-10" style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%)' }} />
+      <div className="absolute bottom-1/4 left-0 w-80 h-80 rounded-full blur-3xl opacity-10" style={{ background: 'radial-gradient(circle, rgba(200,200,200,0.1) 0%, transparent 70%)' }} />
+      
+      <div className="content-container relative z-10">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <BookOpen className="w-4 h-4 text-white" />
+            <span className="text-sm text-[#c0c0c0] font-medium">Learning Path</span>
+          </div>
           <h2 
             className="font-black mb-4 gradient-text"
             style={{ 
@@ -68,7 +84,7 @@ const Education = () => {
           >
             Education
           </h2>
-          <p className="text-[#d0d0d0] text-lg max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
+          <p className="text-[#b0b0b0] text-lg max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
             Academic journey and professional certifications that shaped my expertise
           </p>
         </div>
@@ -155,8 +171,8 @@ const Education = () => {
                     </div>
                     
                     <div className="flex items-center justify-between pt-3 border-t border-white/10">
-                      <span className="text-[#b0b0b0] text-sm">CGPA:</span>
-                      <span className="text-white font-bold text-lg">{edu.cgpa}/10.0</span>
+                      <span className="text-[#b0b0b0] text-sm">Percentage:</span>
+                      <span className="text-white font-bold text-lg">{edu.cgpa}</span>
                     </div>
                   </div>
                 </div>

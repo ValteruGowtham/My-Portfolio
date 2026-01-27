@@ -175,8 +175,70 @@
   }
 }
 
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.5;
+    filter: blur(20px);
+  }
+  50% {
+    opacity: 0.8;
+    filter: blur(25px);
+  }
+}
+
+@keyframes float3d {
+  0%, 100% {
+    transform: translateY(0) rotateX(0) rotateY(0);
+  }
+  25% {
+    transform: translateY(-10px) rotateX(2deg) rotateY(2deg);
+  }
+  50% {
+    transform: translateY(-5px) rotateX(0) rotateY(-2deg);
+  }
+  75% {
+    transform: translateY(-15px) rotateX(-2deg) rotateY(1deg);
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  }
+}
+
 /* Custom Utility Classes - Matte Black Design System */
 @layer components {
+  /* 3D Card Effect */
+  .card-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  .card-3d:hover {
+    transform: rotateX(2deg) rotateY(-2deg) translateZ(10px);
+  }
+  
+  /* Glow Animation */
+  .glow-animation {
+    animation: glow 4s ease-in-out infinite;
+  }
+  
+  /* Float 3D Animation */
+  .float-3d {
+    animation: float3d 8s ease-in-out infinite;
+  }
+  
+  /* Border Glow */
+  .border-glow {
+    animation: borderGlow 3s ease-in-out infinite;
+  }
+  
   /* Gradient Text - White gradient */
   .gradient-text {
     background: linear-gradient(135deg, #ffffff, #e0e0e0, #c0c0c0);

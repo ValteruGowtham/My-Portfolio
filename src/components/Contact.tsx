@@ -1,4 +1,5 @@
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Send, MessageCircle } from "lucide-react";
+import ThreeContactScene from "./ThreeContactScene";
 
 const Contact = () => {
   const contactInfo = [
@@ -38,9 +39,20 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="section-container bg-dark-gradient radial-overlay">
-      <div className="content-container max-w-[1200px]">
+    <section id="contact" className="section-container relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #1a1a1a 0%, #222222 50%, #1a1a1a 100%)' }}>
+      {/* 3D Background */}
+      <ThreeContactScene />
+      
+      {/* Animated gradient orbs */}
+      <div className="absolute top-1/3 left-1/4 w-64 h-64 rounded-full blur-3xl opacity-15 float-animation" style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)' }} />
+      <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full blur-3xl opacity-10 float-animation" style={{ background: 'radial-gradient(circle, rgba(200,200,200,0.15) 0%, transparent 70%)', animationDelay: '2s' }} />
+      
+      <div className="content-container max-w-[1200px] relative z-10">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <MessageCircle className="w-4 h-4 text-white" />
+            <span className="text-sm text-[#c0c0c0] font-medium">Let's Connect</span>
+          </div>
           <h2 
             className="font-black mb-4 gradient-text"
             style={{ 
@@ -50,7 +62,7 @@ const Contact = () => {
           >
             Get In Touch
           </h2>
-          <p className="text-[#d0d0d0] text-lg max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
+          <p className="text-[#b0b0b0] text-lg max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
             Let's discuss opportunities, collaborations, or just have a tech conversation!
           </p>
         </div>

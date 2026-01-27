@@ -1,35 +1,23 @@
-import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
+import ThreeHeroScene from "./ThreeHeroScene";
 
 const Hero = () => {
   return (
-    <section 
-      id="about" 
+    <section
+      id="about"
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
-      style={{
-        background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%)'
-      }}
     >
-      {/* Radial gradient overlays */}
-      <div className="absolute inset-0 radial-overlay" />
-      
-      {/* Floating background elements */}
-      <div 
-        className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full blur-3xl opacity-20 float-animation"
-        style={{
-          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%)'
-        }}
-      />
-      <div 
-        className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full blur-3xl opacity-15 float-animation"
-        style={{
-          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%)',
-          animationDelay: '2s'
-        }}
-      />
-      
-      <div className="content-container px-10 relative z-10 w-full">
+      {/* 3D Scene as Full Background */}
+      <div className="absolute inset-0 z-0">
+        <ThreeHeroScene />
+      </div>
+
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/40 via-transparent to-black/60" />
+
+      <div className="content-container px-6 lg:px-10 relative z-10 w-full">
         <div className="max-w-4xl mx-auto">
-          {/* Main Content */}
+          {/* Text Content */}
           <div className="space-y-8 fade-in-up text-center">
             {/* Name and Title */}
             <div className="space-y-4">
@@ -40,13 +28,13 @@ const Hero = () => {
                   letterSpacing: '-0.02em'
                 }}
               >
-                Gowtham Valteru
+                Valteru Gowtham
               </h1>
               <h2 
                 className="text-[#e0e0e0] font-semibold"
                 style={{ fontSize: 'clamp(1rem, 2vw, 1.3rem)' }}
               >
-                AI/ML Engineer & Full Stack Developer
+                Software Developer & AI/ML Engineer
               </h2>
               <p 
                 className="text-[#d0d0d0] leading-[1.9] max-w-3xl mx-auto"
@@ -58,12 +46,11 @@ const Hero = () => {
             </div>
 
             {/* Highlights */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
               {[
-                { icon: "🎓", label: "B.Tech CSE", value: "LPU Punjab" },
+                { icon: "🎓", label: "B.Tech CSE", value: "LPU Punjab | CGPA 7.78" },
                 { icon: "🏆", label: "Top 10", value: "AWS Hackathon" },
-                { icon: "🚀", label: "6+ Projects", value: "AI/ML & Web" },
-                { icon: "⭐", label: "CGPA 7.78", value: "Academic Excellence" }
+                { icon: "🚀", label: "6+ Projects", value: "AI/ML & Web" }
               ].map((item, index) => (
                 <div 
                   key={item.label}
@@ -101,7 +88,7 @@ const Hero = () => {
               
               <a
                 href="/cv.pdf"
-                download="Gowtham_Valteru_CV.pdf"
+                download="Valteru_Gowtham_CV.pdf"
                 className="relative px-10 py-4 bg-transparent text-white rounded-full font-bold transition-all duration-300 hover:transform hover:-translate-y-1 hover:bg-white/10"
                 style={{
                   border: '2px solid white'

@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Skills from "@/components/Skills";
+import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
@@ -12,6 +13,7 @@ const Index = () => {
       <Navigation />
       <Hero />
       <Skills />
+      <Experience />
       <Projects />
       <Education />
       <Achievements />
@@ -19,18 +21,36 @@ const Index = () => {
       
       {/* Footer */}
       <footer 
-        className="py-8 px-10"
+        className="relative py-12 px-10 overflow-hidden"
         style={{
-          borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-          background: 'rgba(26, 26, 26, 0.95)'
+          background: 'linear-gradient(180deg, #1a1a1a 0%, #151515 100%)',
+          borderTop: '1px solid rgba(255, 255, 255, 0.05)'
         }}
       >
-        <div className="max-w-[1600px] mx-auto text-center">
-          <p className="text-[#b0b0b0] text-sm">
-            © 2024 Gowtham Valteru. Built with React, TypeScript, and Tailwind CSS.
+        {/* Subtle gradient line at top */}
+        <div 
+          className="absolute top-0 left-1/4 right-1/4 h-[1px]"
+          style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)' }}
+        />
+        
+        <div className="max-w-[1600px] mx-auto text-center relative z-10">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <div 
+              className="w-8 h-8 rounded-lg flex items-center justify-center"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
+                border: '1px solid rgba(255,255,255,0.1)'
+              }}
+            >
+              <span className="text-white font-bold text-sm">VG</span>
+            </div>
+            <span className="text-white font-semibold">Valteru Gowtham</span>
+          </div>
+          <p className="text-[#808080] text-sm mb-2">
+            Software Developer & AI/ML Engineer
           </p>
-          <p className="text-[#b0b0b0] text-xs mt-2">
-            Designed with a matte black aesthetic for a modern, professional portfolio experience.
+          <p className="text-[#606060] text-xs">
+            © 2026 • Built with React, TypeScript, Three.js & Tailwind CSS
           </p>
         </div>
       </footer>

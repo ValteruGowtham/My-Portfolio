@@ -3,6 +3,7 @@ import {
   Brain, Cloud, FileCode, Settings, Package, Monitor,
   Layers, Users, MessageSquare, Clock, Star, Lightbulb, Zap
 } from "lucide-react";
+import ThreeSkillsScene from "./ThreeSkillsScene";
 
 const Skills = () => {
   const skillCategories = [
@@ -77,8 +78,15 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="section-container bg-dark-gradient radial-overlay">
-      <div className="content-container">
+    <section id="skills" className="section-container relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #1a1a1a 0%, #252525 50%, #1a1a1a 100%)' }}>
+      {/* 3D Background */}
+      <ThreeSkillsScene />
+      
+      {/* Animated gradient orbs */}
+      <div className="absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl opacity-10 float-animation" style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%)' }} />
+      <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-3xl opacity-10 float-animation" style={{ background: 'radial-gradient(circle, rgba(200,200,200,0.2) 0%, transparent 70%)', animationDelay: '3s' }} />
+      
+      <div className="content-container relative z-10">
         <div className="text-center mb-16">
           <h2 
             className="font-black mb-4 gradient-text"
@@ -99,44 +107,71 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <div 
               key={category.title}
-              className="glass-card rounded-[20px] p-6 fade-in-up"
+              className="group relative rounded-[20px] p-6 fade-in-up overflow-hidden transition-all duration-500 hover:scale-[1.02]"
               style={{ 
                 animationDelay: `${index * 0.1}s`,
-                background: 'rgba(255, 255, 255, 0.05)',
-                backdropFilter: 'blur(10px)',
-                WebkitBackdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
+                background: 'rgba(255, 255, 255, 0.03)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.05)'
               }}
             >
-              <div className="text-center mb-6">
-                <div className="flex items-center justify-center gap-3">
-                  <category.icon className="w-6 h-6 text-white" />
-                  <h3 className="text-white font-bold text-xl" style={{ letterSpacing: '-0.02em' }}>
-                    {category.title}
-                  </h3>
-                </div>
-              </div>
+              {/* Animated border gradient */}
+              <div 
+                className="absolute inset-0 rounded-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(255,255,255,0.05) 100%)',
+                  padding: '1px'
+                }}
+              />
               
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {category.skills.map((skill) => (
-                  <div
-                    key={skill.name}
-                    className="tech-pill flex items-center justify-center gap-2 py-3 px-4 transition-all duration-300 hover:transform hover:-translate-y-2"
-                    style={{
-                      background: 'rgba(255, 255, 255, 0.1)',
-                      border: '1px solid rgba(255, 255, 255, 0.2)',
-                      borderRadius: '50px'
-                    }}
-                  >
-                    {typeof skill.icon === 'string' ? (
-                      <span className="text-lg">{skill.icon}</span>
-                    ) : (
-                      <skill.icon className="w-4 h-4 text-white" />
-                    )}
-                    <span className="text-white text-sm font-bold">{skill.name}</span>
+              {/* Glow effect on hover */}
+              <div 
+                className="absolute -inset-1 rounded-[24px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10"
+                style={{ background: 'radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%)' }}
+              />
+
+              <div className="relative z-10">
+                <div className="text-center mb-6">
+                  <div className="flex items-center justify-center gap-3">
+                    <div 
+                      className="p-3 rounded-xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
+                      style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)' }}
+                    >
+                      <category.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-white font-bold text-xl" style={{ letterSpacing: '-0.02em' }}>
+                      {category.title}
+                    </h3>
                   </div>
-                ))}
+                </div>
+                
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div
+                      key={skill.name}
+                      className="group/skill relative flex items-center justify-center gap-2 py-3 px-4 rounded-full transition-all duration-300 hover:transform hover:-translate-y-2 cursor-pointer overflow-hidden"
+                      style={{
+                        background: 'rgba(255, 255, 255, 0.06)',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        animationDelay: `${skillIndex * 0.05}s`
+                      }}
+                    >
+                      {/* Shine effect */}
+                      <div 
+                        className="absolute inset-0 -translate-x-full group-hover/skill:translate-x-full transition-transform duration-700"
+                        style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)' }}
+                      />
+                      {typeof skill.icon === 'string' ? (
+                        <span className="text-lg">{skill.icon}</span>
+                      ) : (
+                        <skill.icon className="w-4 h-4 text-white" />
+                      )}
+                      <span className="text-white text-sm font-bold relative z-10">{skill.name}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
@@ -154,19 +189,34 @@ const Skills = () => {
             {specializations.map((spec, index) => (
               <div 
                 key={spec.title}
-                className="rounded-[20px] p-6 text-center fade-in-up transition-all duration-300 hover:transform hover:-translate-y-8 hover:scale-[1.01]"
+                className="group relative rounded-[20px] p-8 text-center fade-in-up overflow-hidden transition-all duration-500 hover:transform hover:-translate-y-4"
                 style={{
                   animationDelay: `${0.5 + index * 0.1}s`,
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  backdropFilter: 'blur(10px)',
-                  WebkitBackdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)'
                 }}
               >
-                <div className="text-5xl mb-4">{spec.icon}</div>
-                <h4 className="text-white font-bold text-lg mb-2">{spec.title}</h4>
-                <p className="text-[#d0d0d0] text-sm">{spec.description}</p>
+                {/* Animated background gradient */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                  style={{
+                    background: 'radial-gradient(circle at 50% 0%, rgba(255,255,255,0.1) 0%, transparent 60%)'
+                  }}
+                />
+                
+                <div className="relative z-10">
+                  <div 
+                    className="inline-block text-5xl mb-4 transition-all duration-500 group-hover:scale-125 group-hover:rotate-12"
+                    style={{ filter: 'drop-shadow(0 4px 20px rgba(255,255,255,0.3))' }}
+                  >
+                    {spec.icon}
+                  </div>
+                  <h4 className="text-white font-bold text-lg mb-2">{spec.title}</h4>
+                  <p className="text-[#b0b0b0] text-sm">{spec.description}</p>
+                </div>
               </div>
             ))}
           </div>

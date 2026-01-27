@@ -1,4 +1,5 @@
-import { ExternalLink, Github, Calendar } from "lucide-react";
+import { ExternalLink, Github, Calendar, Sparkles } from "lucide-react";
+import ThreeProjectsScene from "./ThreeProjectsScene";
 
 const Projects = () => {
   const projects = [
@@ -98,9 +99,20 @@ const Projects = () => {
   ];
 
   return (
-    <section className="section-container bg-reverse-dark radial-overlay">
-      <div className="content-container">
+    <section id="projects" className="section-container relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #1f1f1f 0%, #1a1a1a 50%, #1f1f1f 100%)' }}>
+      {/* 3D Background */}
+      <ThreeProjectsScene />
+      
+      {/* Floating gradient orbs */}
+      <div className="absolute top-1/4 right-0 w-80 h-80 rounded-full blur-3xl opacity-10 float-animation" style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)' }} />
+      <div className="absolute bottom-1/4 left-0 w-96 h-96 rounded-full blur-3xl opacity-10 float-animation" style={{ background: 'radial-gradient(circle, rgba(200,200,200,0.15) 0%, transparent 70%)', animationDelay: '4s' }} />
+      
+      <div className="content-container relative z-10">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <Sparkles className="w-4 h-4 text-white" />
+            <span className="text-sm text-[#c0c0c0] font-medium">Featured Work</span>
+          </div>
           <h2 
             className="font-black mb-4 gradient-text"
             style={{ 
@@ -120,40 +132,52 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="glass-card rounded-[20px] p-6 fade-in-up group relative overflow-hidden"
+              className="group relative rounded-[24px] p-6 fade-in-up overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2"
               style={{ 
                 animationDelay: `${index * 0.1}s`,
-                background: 'rgba(255, 255, 255, 0.05)',
-                backdropFilter: 'blur(10px)',
-                WebkitBackdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
+                background: 'linear-gradient(145deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.05)'
               }}
             >
-              {/* Top border accent */}
+              {/* Animated glow on hover */}
               <div 
-                className="absolute top-0 left-0 right-0 h-[5px] origin-left transition-transform duration-300 group-hover:scale-x-100"
+                className="absolute -inset-1 rounded-[28px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl -z-10"
+                style={{ background: 'radial-gradient(circle at 50% 0%, rgba(255,255,255,0.15) 0%, transparent 60%)' }}
+              />
+              
+              {/* Top border accent - animated */}
+              <div 
+                className="absolute top-0 left-0 right-0 h-[3px] transition-all duration-500"
                 style={{
-                  background: 'linear-gradient(90deg, #ffffff, #e0e0e0, #c0c0c0)',
-                  transform: 'scaleX(0.3)'
+                  background: 'linear-gradient(90deg, transparent, #ffffff, #e0e0e0, #ffffff, transparent)',
+                  opacity: 0.3
+                }}
+              />
+              <div 
+                className="absolute top-0 left-0 h-[3px] transition-all duration-500 group-hover:w-full"
+                style={{
+                  width: '30%',
+                  background: 'linear-gradient(90deg, #ffffff, #c0c0c0)',
                 }}
               />
 
               {/* Category Badge & Period */}
               <div className="flex items-start justify-between mb-4 mt-2">
                 <span 
-                  className="tech-pill"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-300 group-hover:scale-105"
                   style={{
-                    background: 'rgba(255, 255, 255, 0.1)',
-                    padding: '0.4rem 0.8rem',
-                    fontSize: '0.75rem',
-                    borderRadius: '50px',
-                    border: '1px solid rgba(255, 255, 255, 0.2)'
+                    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 100%)',
+                    border: '1px solid rgba(255, 255, 255, 0.15)',
+                    color: '#ffffff'
                   }}
                 >
+                  <span className="w-1.5 h-1.5 rounded-full bg-white" style={{ boxShadow: '0 0 6px rgba(255,255,255,0.8)' }} />
                   {project.category}
                 </span>
-                <div className="flex items-center gap-1 text-[#b0b0b0] text-xs">
+                <div className="flex items-center gap-1 text-[#a0a0a0] text-xs">
                   <Calendar className="w-3 h-3" />
                   {project.period}
                 </div>
