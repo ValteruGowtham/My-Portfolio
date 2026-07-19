@@ -39,7 +39,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="section-container relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #1a1a1a 0%, #222222 50%, #1a1a1a 100%)' }}>
+    <section id="contact" className="section-container relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #050816 0%, #222222 50%, #050816 100%)' }}>
       {/* 3D Background */}
       <ThreeContactScene />
       
@@ -51,7 +51,7 @@ const Contact = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
             <MessageCircle className="w-4 h-4 text-white" />
-            <span className="text-sm text-[#c0c0c0] font-medium">Let's Connect</span>
+            <span className="text-sm text-[#a5b4fc] font-medium">Let's Connect</span>
           </div>
           <h2 
             className="font-black mb-4 gradient-text"
@@ -62,7 +62,7 @@ const Contact = () => {
           >
             Get In Touch
           </h2>
-          <p className="text-[#b0b0b0] text-lg max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
+          <p className="text-[#94a3b8] text-lg max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
             Let's discuss opportunities, collaborations, or just have a tech conversation!
           </p>
         </div>
@@ -95,11 +95,11 @@ const Contact = () => {
                       <contact.icon className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-[#b0b0b0] text-sm font-semibold mb-1">{contact.label}</p>
+                      <p className="text-[#94a3b8] text-sm font-semibold mb-1">{contact.label}</p>
                       {contact.link ? (
                         <a 
                           href={contact.link}
-                          className="text-white hover:text-[#e0e0e0] transition-colors break-words"
+                          className="text-white hover:text-[#c7d2fe] transition-colors break-words"
                           target={contact.link.startsWith('http') ? '_blank' : undefined}
                           rel={contact.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                         >
@@ -147,7 +147,7 @@ const Contact = () => {
                       </div>
                       <div className="flex-1">
                         <p className="text-white font-semibold text-sm mb-1">{social.label}</p>
-                        <p className="text-[#b0b0b0] text-xs group-hover:text-white transition-colors">
+                        <p className="text-[#94a3b8] text-xs group-hover:text-white transition-colors">
                           {social.value}
                         </p>
                       </div>
@@ -173,11 +173,11 @@ const Contact = () => {
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label className="text-[#e0e0e0] text-sm font-semibold">Name</label>
+                  <label className="text-[#c7d2fe] text-sm font-semibold">Name</label>
                   <input 
                     type="text"
                     placeholder="Your full name"
-                    className="w-full px-4 py-3 rounded-lg text-white placeholder-[#b0b0b0] focus:outline-none focus:ring-2 transition-all"
+                    className="w-full px-4 py-3 rounded-lg text-white placeholder-[#94a3b8] focus:outline-none focus:ring-2 transition-all"
                     style={{
                       background: 'rgba(255, 255, 255, 0.05)',
                       border: '1px solid rgba(255, 255, 255, 0.1)',
@@ -186,11 +186,11 @@ const Contact = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[#e0e0e0] text-sm font-semibold">Email</label>
+                  <label className="text-[#c7d2fe] text-sm font-semibold">Email</label>
                   <input 
                     type="email"
                     placeholder="your.email@example.com"
-                    className="w-full px-4 py-3 rounded-lg text-white placeholder-[#b0b0b0] focus:outline-none focus:ring-2 transition-all"
+                    className="w-full px-4 py-3 rounded-lg text-white placeholder-[#94a3b8] focus:outline-none focus:ring-2 transition-all"
                     style={{
                       background: 'rgba(255, 255, 255, 0.05)',
                       border: '1px solid rgba(255, 255, 255, 0.1)'
@@ -200,11 +200,11 @@ const Contact = () => {
               </div>
               
               <div className="space-y-2">
-                <label className="text-[#e0e0e0] text-sm font-semibold">Subject</label>
+                <label className="text-[#c7d2fe] text-sm font-semibold">Subject</label>
                 <input 
                   type="text"
                   placeholder="What's this about?"
-                  className="w-full px-4 py-3 rounded-lg text-white placeholder-[#b0b0b0] focus:outline-none focus:ring-2 transition-all"
+                  className="w-full px-4 py-3 rounded-lg text-white placeholder-[#94a3b8] focus:outline-none focus:ring-2 transition-all"
                   style={{
                     background: 'rgba(255, 255, 255, 0.05)',
                     border: '1px solid rgba(255, 255, 255, 0.1)'
@@ -213,11 +213,11 @@ const Contact = () => {
               </div>
               
               <div className="space-y-2">
-                <label className="text-[#e0e0e0] text-sm font-semibold">Message</label>
+                <label className="text-[#c7d2fe] text-sm font-semibold">Message</label>
                 <textarea 
                   placeholder="Tell me about your project, opportunity, or just say hello!"
                   rows={6}
-                  className="w-full px-4 py-3 rounded-lg text-white placeholder-[#b0b0b0] focus:outline-none focus:ring-2 transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-lg text-white placeholder-[#94a3b8] focus:outline-none focus:ring-2 transition-all resize-none"
                   style={{
                     background: 'rgba(255, 255, 255, 0.05)',
                     border: '1px solid rgba(255, 255, 255, 0.1)'
@@ -227,7 +227,7 @@ const Contact = () => {
               
               <button 
                 type="submit"
-                className="w-full px-10 py-4 bg-white text-[#1a1a1a] rounded-full font-bold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(255,255,255,0.3)] flex items-center justify-center gap-2"
+                className="w-full px-10 py-4 bg-white text-[#050816] rounded-full font-bold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(255,255,255,0.3)] flex items-center justify-center gap-2"
               >
                 <Send className="w-5 h-5" />
                 Send Message
@@ -235,11 +235,11 @@ const Contact = () => {
             </form>
 
             <div className="mt-6 text-center">
-              <p className="text-[#b0b0b0] text-sm">
+              <p className="text-[#94a3b8] text-sm">
                 Or reach out directly via{" "}
                 <a 
                   href="mailto:gowtham.valteru05@gmail.com"
-                  className="text-white hover:text-[#e0e0e0] underline transition-colors"
+                  className="text-white hover:text-[#c7d2fe] underline transition-colors"
                 >
                   email
                 </a>
@@ -268,7 +268,7 @@ const Contact = () => {
               <div className="w-3 h-3 rounded-full bg-green-400 pulse-animation" />
               <h4 className="text-green-400 font-bold text-lg">Currently Available</h4>
             </div>
-            <p className="text-[#d0d0d0] text-sm mb-4">
+            <p className="text-[#cbd5e1] text-sm mb-4">
               Open to new opportunities in AI/ML engineering, full-stack development, and innovative tech projects. Let's build something amazing together!
             </p>
             <div className="flex flex-wrap justify-center gap-2">

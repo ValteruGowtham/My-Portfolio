@@ -29,7 +29,7 @@ const Achievements = () => {
   ];
 
   return (
-    <section id="achievements" className="section-container relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #1f1f1f 0%, #1a1a1a 50%, #1f1f1f 100%)' }}>
+    <section id="achievements" className="section-container relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #1f1f1f 0%, #050816 50%, #1f1f1f 100%)' }}>
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-2 h-2 rounded-full bg-white/20 float-animation" />
@@ -47,7 +47,7 @@ const Achievements = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
             <Trophy className="w-4 h-4 text-white" />
-            <span className="text-sm text-[#c0c0c0] font-medium">Recognition</span>
+            <span className="text-sm text-[#a5b4fc] font-medium">Recognition</span>
           </div>
           <h2 
             className="font-black mb-4 gradient-text"
@@ -58,7 +58,7 @@ const Achievements = () => {
           >
             Key Achievements
           </h2>
-          <p className="text-[#b0b0b0] text-lg max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
+          <p className="text-[#94a3b8] text-lg max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
             Highlights that reflect impact, excellence, and dedication
           </p>
         </div>
@@ -112,7 +112,7 @@ const Achievements = () => {
                   <h3 className="text-white font-bold text-lg mb-2 group-hover:text-white transition-colors">
                     {achievement.title}
                   </h3>
-                  <p className="text-[#a0a0a0] text-sm leading-relaxed group-hover:text-[#c0c0c0] transition-colors">
+                  <p className="text-[#a0a0a0] text-sm leading-relaxed group-hover:text-[#a5b4fc] transition-colors">
                     {achievement.description}
                   </p>
                 </div>

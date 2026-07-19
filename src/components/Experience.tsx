@@ -17,7 +17,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="section-container relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #1a1a1a 0%, #1f1f1f 50%, #1a1a1a 100%)' }}>
+    <section id="experience" className="section-container relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #050816 0%, #1f1f1f 50%, #050816 100%)' }}>
       {/* Animated background particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-10 w-1 h-1 rounded-full bg-white/30 float-animation" />
@@ -34,7 +34,7 @@ const Experience = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
             <Rocket className="w-4 h-4 text-white" />
-            <span className="text-sm text-[#c0c0c0] font-medium">Professional Journey</span>
+            <span className="text-sm text-[#a5b4fc] font-medium">Professional Journey</span>
           </div>
           <h2
             className="font-black mb-4 gradient-text"
@@ -45,7 +45,7 @@ const Experience = () => {
           >
             Work Experience
           </h2>
-          <p className="text-[#b0b0b0] text-lg max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
+          <p className="text-[#94a3b8] text-lg max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
             Professional experience in building AI/ML solutions and software systems
           </p>
         </div>
@@ -68,7 +68,7 @@ const Experience = () => {
               <div 
                 className="absolute left-0 top-0 bottom-0 w-[4px] rounded-l-[28px] transition-all duration-500"
                 style={{
-                  background: 'linear-gradient(180deg, #ffffff, #c0c0c0, #808080)',
+                  background: 'linear-gradient(180deg, #ffffff, #a5b4fc, #64748b)',
                 }}
               />
               
@@ -82,12 +82,12 @@ const Experience = () => {
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
                 <div>
                   <h3 className="text-white font-bold text-xl mb-1">{exp.title}</h3>
-                  <div className="flex items-center gap-2 text-[#c0c0c0]">
+                  <div className="flex items-center gap-2 text-[#a5b4fc]">
                     <Briefcase className="w-4 h-4" />
                     <span className="font-semibold">{exp.company}</span>
                   </div>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-3 text-[#b0b0b0] text-sm">
+                <div className="flex flex-col sm:flex-row gap-3 text-[#94a3b8] text-sm">
                   <div className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
                     <span>{exp.period}</span>
@@ -103,7 +103,7 @@ const Experience = () => {
               <div className="mb-6">
                 <ul className="space-y-3">
                   {exp.highlights.map((highlight, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-[#d0d0d0]">
+                    <li key={idx} className="flex items-start gap-3 text-[#cbd5e1]">
                       <span className="text-white mt-1.5 text-xs">▹</span>
                       <span className="leading-relaxed">{highlight}</span>
                     </li>

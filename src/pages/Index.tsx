@@ -9,7 +9,7 @@ import Achievements from "@/components/Achievements";
 
 const Index = () => {
   return (
-    <div className="min-h-screen" style={{ background: '#1a1a1a' }}>
+    <div className="min-h-screen" style={{ background: '#050816' }}>
       <Navigation />
       <Hero />
       <Skills />
@@ -23,7 +23,7 @@ const Index = () => {
       <footer 
         className="relative py-12 px-10 overflow-hidden"
         style={{
-          background: 'linear-gradient(180deg, #1a1a1a 0%, #151515 100%)',
+          background: 'linear-gradient(180deg, #050816 0%, #151515 100%)',
           borderTop: '1px solid rgba(255, 255, 255, 0.05)'
         }}
       >
@@ -46,10 +46,10 @@ const Index = () => {
             </div>
             <span className="text-white font-semibold">Valteru Gowtham</span>
           </div>
-          <p className="text-[#808080] text-sm mb-2">
+          <p className="text-[#64748b] text-sm mb-2">
             Software Developer & AI/ML Engineer
           </p>
-          <p className="text-[#606060] text-xs">
+          <p className="text-[#475569] text-xs">
             © 2026 • Built with React, TypeScript, Three.js & Tailwind CSS
           </p>
         </div>

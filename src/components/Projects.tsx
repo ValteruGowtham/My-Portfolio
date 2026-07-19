@@ -99,7 +99,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="section-container relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #1f1f1f 0%, #1a1a1a 50%, #1f1f1f 100%)' }}>
+    <section id="projects" className="section-container relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #1f1f1f 0%, #050816 50%, #1f1f1f 100%)' }}>
       {/* 3D Background */}
       <ThreeProjectsScene />
       
@@ -111,7 +111,7 @@ const Projects = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
             <Sparkles className="w-4 h-4 text-white" />
-            <span className="text-sm text-[#c0c0c0] font-medium">Featured Work</span>
+            <span className="text-sm text-[#a5b4fc] font-medium">Featured Work</span>
           </div>
           <h2 
             className="font-black mb-4 gradient-text"
@@ -122,7 +122,7 @@ const Projects = () => {
           >
             Featured Projects
           </h2>
-          <p className="text-[#d0d0d0] text-lg max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
+          <p className="text-[#cbd5e1] text-lg max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
             A showcase of innovative projects demonstrating expertise in AI/ML, web development, and software engineering
           </p>
         </div>
@@ -152,7 +152,7 @@ const Projects = () => {
               <div 
                 className="absolute top-0 left-0 right-0 h-[3px] transition-all duration-500"
                 style={{
-                  background: 'linear-gradient(90deg, transparent, #ffffff, #e0e0e0, #ffffff, transparent)',
+                  background: 'linear-gradient(90deg, transparent, #ffffff, #c7d2fe, #ffffff, transparent)',
                   opacity: 0.3
                 }}
               />
@@ -160,7 +160,7 @@ const Projects = () => {
                 className="absolute top-0 left-0 h-[3px] transition-all duration-500 group-hover:w-full"
                 style={{
                   width: '30%',
-                  background: 'linear-gradient(90deg, #ffffff, #c0c0c0)',
+                  background: 'linear-gradient(90deg, #ffffff, #a5b4fc)',
                 }}
               />
 
@@ -184,22 +184,22 @@ const Projects = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-white font-bold text-[1.1rem] mb-3 group-hover:text-[#e0e0e0] transition-colors">
+              <h3 className="text-white font-bold text-[1.1rem] mb-3 group-hover:text-[#c7d2fe] transition-colors">
                 {project.title}
               </h3>
 
               {/* Description */}
-              <p className="text-[#d0d0d0] text-sm mb-4 leading-relaxed">
+              <p className="text-[#cbd5e1] text-sm mb-4 leading-relaxed">
                 {project.description}
               </p>
 
               {/* Highlights */}
               <div className="mb-4">
-                <h4 className="text-[#c0c0c0] font-semibold text-xs mb-2">Key Achievements:</h4>
+                <h4 className="text-[#a5b4fc] font-semibold text-xs mb-2">Key Achievements:</h4>
                 <ul className="space-y-1">
                   {project.highlights.map((highlight, idx) => (
-                    <li key={idx} className="text-[#b0b0b0] text-xs flex items-start">
-                      <span className="text-[#c0c0c0] mr-2">▪</span>
+                    <li key={idx} className="text-[#94a3b8] text-xs flex items-start">
+                      <span className="text-[#a5b4fc] mr-2">▪</span>
                       {highlight}
                     </li>
                   ))}
@@ -269,9 +269,9 @@ const Projects = () => {
               >
                 <div className="flex justify-between items-start mb-3">
                   <h4 className="text-white font-semibold text-base">{project.title}</h4>
-                  <span className="text-[#b0b0b0] text-xs whitespace-nowrap ml-2">{project.period}</span>
+                  <span className="text-[#94a3b8] text-xs whitespace-nowrap ml-2">{project.period}</span>
                 </div>
-                <p className="text-[#d0d0d0] text-sm mb-4">{project.description}</p>
+                <p className="text-[#cbd5e1] text-sm mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
                     <span

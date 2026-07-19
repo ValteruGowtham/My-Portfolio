@@ -56,7 +56,7 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="section-container relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #1f1f1f 0%, #1a1a1a 50%, #1f1f1f 100%)' }}>
+    <section id="education" className="section-container relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #1f1f1f 0%, #050816 50%, #1f1f1f 100%)' }}>
       {/* Animated floating particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-20 w-1.5 h-1.5 rounded-full bg-white/25 float-animation" />
@@ -73,7 +73,7 @@ const Education = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
             <BookOpen className="w-4 h-4 text-white" />
-            <span className="text-sm text-[#c0c0c0] font-medium">Learning Path</span>
+            <span className="text-sm text-[#a5b4fc] font-medium">Learning Path</span>
           </div>
           <h2 
             className="font-black mb-4 gradient-text"
@@ -84,7 +84,7 @@ const Education = () => {
           >
             Education
           </h2>
-          <p className="text-[#b0b0b0] text-lg max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
+          <p className="text-[#94a3b8] text-lg max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
             Academic journey and professional certifications that shaped my expertise
           </p>
         </div>
@@ -104,7 +104,7 @@ const Education = () => {
               <div 
                 className="absolute left-[31px] top-8 bottom-8 w-[3px] rounded-full"
                 style={{
-                  background: 'linear-gradient(180deg, #ffffff, #e0e0e0, transparent)',
+                  background: 'linear-gradient(180deg, #ffffff, #c7d2fe, transparent)',
                 }}
               />
 
@@ -116,8 +116,8 @@ const Education = () => {
                   <div 
                     className="relative flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center text-2xl pulse-animation transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110"
                     style={{
-                      background: 'linear-gradient(135deg, #ffffff, #e0e0e0)',
-                      color: '#1a1a1a',
+                      background: 'linear-gradient(135deg, #ffffff, #c7d2fe)',
+                      color: '#050816',
                       boxShadow: '0 8px 32px rgba(255, 255, 255, 0.3), 0 0 0 0 rgba(255, 255, 255, 0.4)',
                       zIndex: 1
                     }}
@@ -140,10 +140,10 @@ const Education = () => {
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1">
                         <h4 className="text-white font-bold text-lg mb-1">{edu.institution}</h4>
-                        <p className="text-[#e0e0e0] font-semibold text-sm mb-1">
+                        <p className="text-[#c7d2fe] font-semibold text-sm mb-1">
                           {edu.degree} - {edu.field}
                         </p>
-                        <div className="flex items-center gap-1 text-[#b0b0b0] text-sm">
+                        <div className="flex items-center gap-1 text-[#94a3b8] text-sm">
                           <MapPin className="w-3 h-3" />
                           {edu.location}
                         </div>
@@ -163,7 +163,7 @@ const Education = () => {
                         >
                           {edu.status}
                         </span>
-                        <div className="flex items-center gap-1 text-[#b0b0b0] text-xs justify-end">
+                        <div className="flex items-center gap-1 text-[#94a3b8] text-xs justify-end">
                           <Calendar className="w-3 h-3" />
                           {edu.period}
                         </div>
@@ -171,7 +171,7 @@ const Education = () => {
                     </div>
                     
                     <div className="flex items-center justify-between pt-3 border-t border-white/10">
-                      <span className="text-[#b0b0b0] text-sm">Percentage:</span>
+                      <span className="text-[#94a3b8] text-sm">Percentage:</span>
                       <span className="text-white font-bold text-lg">{edu.cgpa}</span>
                     </div>
                   </div>
@@ -217,8 +217,8 @@ const Education = () => {
                           {cert.type}
                         </span>
                       </div>
-                      <p className="text-[#e0e0e0] font-medium text-sm">{cert.issuer}</p>
-                      <p className="text-[#b0b0b0] text-xs">{cert.date}</p>
+                      <p className="text-[#c7d2fe] font-medium text-sm">{cert.issuer}</p>
+                      <p className="text-[#94a3b8] text-xs">{cert.date}</p>
                     </div>
                   </div>
                 ))}
@@ -248,10 +248,10 @@ const Education = () => {
                   <h4 className="text-white font-bold text-sm">
                     Complete Machine Learning and Data Science
                   </h4>
-                  <p className="text-[#b0b0b0] text-xs">
+                  <p className="text-[#94a3b8] text-xs">
                     GeeksforGeeks • May 2024 - Jun 2024
                   </p>
-                  <p className="text-[#d0d0d0] text-xs leading-relaxed mt-2">
+                  <p className="text-[#cbd5e1] text-xs leading-relaxed mt-2">
                     Comprehensive course covering data preprocessing, feature engineering, 
                     model optimization, and real-world problem-solving using Python.
                   </p>
