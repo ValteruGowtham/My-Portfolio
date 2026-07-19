@@ -31,13 +31,13 @@ const Hero = () => {
                 Valteru Gowtham
               </h1>
               <h2 
-                className="text-[#e0e0e0] font-semibold"
+                className="text-[#c7d2fe] font-semibold"
                 style={{ fontSize: 'clamp(1rem, 2vw, 1.3rem)' }}
               >
                 Software Developer & AI/ML Engineer
               </h2>
               <p 
-                className="text-[#d0d0d0] leading-[1.9] max-w-3xl mx-auto"
+                className="text-[#cbd5e1] leading-[1.9] max-w-3xl mx-auto"
                 style={{ fontSize: '1.05rem' }}
               >
                 Passionate about building intelligent systems and solving real-world problems 
@@ -63,7 +63,7 @@ const Hero = () => {
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">{item.icon}</span>
                     <div>
-                      <p className="text-[#b0b0b0] text-xs font-semibold">{item.label}</p>
+                      <p className="text-[#94a3b8] text-xs font-semibold">{item.label}</p>
                       <p className="text-white font-bold text-sm">{item.value}</p>
                     </div>
                   </div>
@@ -75,7 +75,7 @@ const Hero = () => {
             <div className="flex flex-wrap gap-4 justify-center">
               <button
                 onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="relative px-10 py-4 bg-white text-[#1a1a1a] rounded-full font-bold overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(255,255,255,0.3)]"
+                className="relative px-10 py-4 bg-white text-[#050816] rounded-full font-bold overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(255,255,255,0.3)]"
               >
                 <span className="relative z-10">View Projects</span>
                 <div 

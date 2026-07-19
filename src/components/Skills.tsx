@@ -78,7 +78,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="section-container relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #1a1a1a 0%, #252525 50%, #1a1a1a 100%)' }}>
+    <section id="skills" className="section-container relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #050816 0%, #252525 50%, #050816 100%)' }}>
       {/* 3D Background */}
       <ThreeSkillsScene />
       
@@ -97,7 +97,7 @@ const Skills = () => {
           >
             Technical Skills
           </h2>
-          <p className="text-[#d0d0d0] text-lg max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
+          <p className="text-[#cbd5e1] text-lg max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
             A comprehensive overview of my technical expertise and capabilities
           </p>
         </div>
@@ -215,7 +215,7 @@ const Skills = () => {
                     {spec.icon}
                   </div>
                   <h4 className="text-white font-bold text-lg mb-2">{spec.title}</h4>
-                  <p className="text-[#b0b0b0] text-sm">{spec.description}</p>
+                  <p className="text-[#94a3b8] text-sm">{spec.description}</p>
                 </div>
               </div>
             ))}

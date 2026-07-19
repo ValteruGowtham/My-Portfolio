@@ -111,7 +111,7 @@ const Navigation = () => {
                   onClick={() => scrollToSection(item.href)}
                   className="relative px-4 py-2 rounded-full transition-all duration-300 font-medium group"
                   style={{
-                    color: isActive ? '#ffffff' : '#b0b0b0',
+                    color: isActive ? '#ffffff' : '#94a3b8',
                     background: isActive ? 'rgba(255,255,255,0.1)' : 'transparent'
                   }}
                 >
@@ -136,8 +136,8 @@ const Navigation = () => {
               download="Valteru_Gowtham_CV.pdf"
               className="relative ml-4 px-6 py-2.5 rounded-full font-semibold overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-1 group"
               style={{
-                background: 'linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%)',
-                color: '#1a1a1a',
+                background: 'linear-gradient(135deg, #ffffff 0%, #c7d2fe 100%)',
+                color: '#050816',
                 boxShadow: '0 4px 15px rgba(255,255,255,0.2)'
               }}
             >
@@ -188,7 +188,7 @@ const Navigation = () => {
                   onClick={() => scrollToSection(item.href)}
                   className="flex items-center w-full text-left py-3 px-4 rounded-xl transition-all duration-300"
                   style={{
-                    color: isActive ? '#ffffff' : '#b0b0b0',
+                    color: isActive ? '#ffffff' : '#94a3b8',
                     background: isActive ? 'rgba(255,255,255,0.1)' : 'transparent'
                   }}
                 >
@@ -202,8 +202,8 @@ const Navigation = () => {
               download="Valteru_Gowtham_CV.pdf"
               className="flex items-center justify-center gap-2 w-full px-6 py-3 mt-4 rounded-xl font-semibold transition-all duration-300"
               style={{
-                background: 'linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%)',
-                color: '#1a1a1a'
+                background: 'linear-gradient(135deg, #ffffff 0%, #c7d2fe 100%)',
+                color: '#050816'
               }}
             >
               <Sparkles className="w-4 h-4" />

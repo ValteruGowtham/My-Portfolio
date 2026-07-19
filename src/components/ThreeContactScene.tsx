@@ -70,7 +70,7 @@ const FloatingTorus = ({ position, rotation }: {
     <Float speed={1.2} floatIntensity={0.3}>
       <Torus ref={meshRef} args={[0.3, 0.1, 16, 32]} position={position}>
         <meshStandardMaterial
-          color="#e0e0e0"
+          color="#c7d2fe"
           metalness={0.8}
           roughness={0.2}
           transparent
@@ -90,13 +90,13 @@ const ContactScene = () => {
     >
       <ambientLight intensity={0.4} />
       <pointLight position={[3, 3, 3]} intensity={0.8} />
-      <pointLight position={[-3, -3, -3]} intensity={0.4} color="#c0c0c0" />
+      <pointLight position={[-3, -3, -3]} intensity={0.4} color="#a5b4fc" />
 
       <CentralSphere />
       
       <OrbitingRing radius={1.2} speed={0.5} color="#ffffff" tilt={0.3} />
-      <OrbitingRing radius={1.6} speed={-0.3} color="#e0e0e0" tilt={-0.5} />
-      <OrbitingRing radius={2} speed={0.2} color="#c0c0c0" tilt={0.8} />
+      <OrbitingRing radius={1.6} speed={-0.3} color="#c7d2fe" tilt={-0.5} />
+      <OrbitingRing radius={2} speed={0.2} color="#a5b4fc" tilt={0.8} />
 
       <FloatingTorus position={[-2, 1.5, -1]} rotation={[0.5, 0.3, 0]} />
       <FloatingTorus position={[2.5, -1, 0.5]} rotation={[0.2, 0.8, 0]} />

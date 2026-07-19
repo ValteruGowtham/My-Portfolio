@@ -77,14 +77,14 @@ const SkillsScene = () => {
     >
       <ambientLight intensity={0.3} />
       <pointLight position={[10, 10, 10]} intensity={0.8} />
-      <pointLight position={[-10, -10, -10]} intensity={0.4} color="#e0e0e0" />
+      <pointLight position={[-10, -10, -10]} intensity={0.4} color="#c7d2fe" />
 
       <Particles count={150} />
       
       <FloatingOrb position={[-3, 1.5, 0]} color="#ffffff" speed={1.2} />
-      <FloatingOrb position={[3, -1, 1]} color="#c0c0c0" speed={0.8} distort={0.3} />
-      <FloatingOrb position={[0, 2, -2]} color="#e0e0e0" speed={1} distort={0.5} />
-      <FloatingOrb position={[-2, -1.5, 1]} color="#d0d0d0" speed={1.4} distort={0.35} />
+      <FloatingOrb position={[3, -1, 1]} color="#a5b4fc" speed={0.8} distort={0.3} />
+      <FloatingOrb position={[0, 2, -2]} color="#c7d2fe" speed={1} distort={0.5} />
+      <FloatingOrb position={[-2, -1.5, 1]} color="#cbd5e1" speed={1.4} distort={0.35} />
       <FloatingOrb position={[2.5, 0.5, -1]} color="#f0f0f0" speed={0.9} distort={0.45} />
     </Canvas>
   );

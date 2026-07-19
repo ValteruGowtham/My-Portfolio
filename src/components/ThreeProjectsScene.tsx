@@ -65,11 +65,11 @@ const ProjectsScene = () => {
     >
       <ambientLight intensity={0.4} />
       <pointLight position={[5, 5, 5]} intensity={0.6} />
-      <pointLight position={[-5, -5, -5]} intensity={0.3} color="#c0c0c0" />
+      <pointLight position={[-5, -5, -5]} intensity={0.3} color="#a5b4fc" />
 
       <RotatingShape position={[-4, 2, 0]} color="#ffffff" />
-      <RotatingShape position={[4, -1.5, 1]} color="#e0e0e0" />
-      <RotatingShape position={[-3, -2, -1]} color="#d0d0d0" />
+      <RotatingShape position={[4, -1.5, 1]} color="#c7d2fe" />
+      <RotatingShape position={[-3, -2, -1]} color="#cbd5e1" />
       <PulsingOctahedron position={[3, 1.5, -1]} />
       <PulsingOctahedron position={[0, -2.5, 0]} />
     </Canvas>
